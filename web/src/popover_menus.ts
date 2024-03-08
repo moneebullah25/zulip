@@ -146,6 +146,10 @@ function get_popover_items_for_instance(instance: PopoverInstance): JQuery | und
         return undefined;
     }
 
+    if (is_personal_menu_popover_displayed()) {
+        return $current_elem.find("a:visible, #theme-switcher .tab-option-content");
+    }
+
     return $current_elem.find("a:visible");
 }
 
